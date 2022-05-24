@@ -26,7 +26,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
                         android:layout_gravity="center_horizontal"
-                        android:text="Criar Conta">
+                        android:text="@string/addAccount">
 
                 </TextView>
 
@@ -42,7 +42,7 @@
 
 
             <TextView
-                    android:text="E-mail"
+                    android:text="@string/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -53,13 +53,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:hint="email@email.com"
+                    android:inputType="textEmailAddress"
                     android:textSize="14sp"
                     android:background="@drawable/bg_edit"
                     android:padding="14dp"
                     android:id="@+id/edtEmail"/>
 
             <TextView
-                    android:text="Senha"
+                    android:text="@string/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -71,16 +72,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:hint="******"
+                    android:inputType="textPassword"
                     android:textSize="14sp"
                     android:background="@drawable/bg_edit"
                     android:padding="14dp"
-
                     android:id="@+id/edtPassword"/>
 
             <Button android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Criar Conta"
+                    android:text="@string/addAccount"
                     android:textAllCaps="false"
                     android:textColor="@color/cor_default"
                     android:background="@drawable/bg_button"

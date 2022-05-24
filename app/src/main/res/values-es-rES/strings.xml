@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MiListaDeTareas</string>
+    <string name="email">E-mail</string>
+    <string name="password">Contra-Sena</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="logout">Salir</string>
+    <string name="addAccount">Crea una cuenta</string>
+    <string name="recoveryAccount">Recuperar cuenta</string>
+    <string name="submit">Mandar</string>
+    <string name="developedby">Desarrollado por:</string>
+    <string name="version">Version: 1.0</string>
+</resources>

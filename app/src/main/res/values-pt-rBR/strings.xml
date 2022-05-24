@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MinhaListaDeTarefas</string>
+    <string name="email">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="login">Entrar</string>
+    <string name="logout">Sair</string>
+    <string name="addAccount">Criar Conta</string>
+    <string name="recoveryAccount">Recuperar Conta</string>
+    <string name="submit">Enviar</string>
+    <string name="developedby">Desenvolvido Por:</string>
+    <string name="version">Versão: 1.0</string>
+</resources>

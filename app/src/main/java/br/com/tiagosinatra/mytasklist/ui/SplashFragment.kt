@@ -10,12 +10,17 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import br.com.tiagosinatra.mytasklist.R
 import br.com.tiagosinatra.mytasklist.databinding.FragmentSplashBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.delay
 
 class SplashFragment : Fragment() {
 
     private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreateView(
@@ -30,6 +35,7 @@ class SplashFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Handler(Looper.getMainLooper()).postDelayed(this::checkAuth, 3000)
+        auth = Firebase.auth
     }
 
     override fun onDestroyView() {
@@ -38,6 +44,13 @@ class SplashFragment : Fragment() {
     }
 
     private fun checkAuth(){
-        findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+        auth = Firebase.auth
+
+        if (auth.currentUser == null) {
+            findNavController().navigate(R.id.action_splashFragment_to_authentication)
+        } else {
+            findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+        }
+
     }
 }
