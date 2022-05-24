@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import br.com.tiagosinatra.mytasklist.R
 import br.com.tiagosinatra.mytasklist.databinding.FragmentLoginBinding
 import br.com.tiagosinatra.mytasklist.databinding.FragmentRecoveryAccountBinding
+import br.com.tiagosinatra.mytasklist.helper.FirebaseHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -55,6 +56,8 @@ class RecoveryAccountFragment : Fragment() {
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                    Toast.makeText(requireContext(), "Pronto, acabamos de enviar um link para seu e-mail", Toast.LENGTH_SHORT)
+                } else {
+                    Toast.makeText(requireContext(), FirebaseHelper.validError(task.exception?.message ?: ""), Toast.LENGTH_SHORT).show()
                 }
                     binding.progressBar.isVisible = false
             }

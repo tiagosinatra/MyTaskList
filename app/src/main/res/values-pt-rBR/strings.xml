@@ -10,4 +10,22 @@
     <string name="submit">Enviar</string>
     <string name="developedby">Desenvolvido Por:</string>
     <string name="version">Versão: 1.0</string>
+    <string name="loading_tasks">Carregando Tarefas</string>
+
+    <string name="account_not_registered_register_fragment">Nenhuma conta encontrada com este e-mail.</string>
+    <string name="invalid_email_register_fragment">Insira um e-mail válido.</string>
+    <string name="invalid_password_register_fragment">Senha inválida, tente novamente.</string>
+    <string name="email_in_use_register_fragment">Este e-mail já está em uso.</string>
+    <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
+    <string name="error_generic">Ocorreu um erro, por favor tente novamente mais tarde.</string>
+
+    <string name="new_task">Nova Tarefa</string>
+    <string name="task">Tarefa</string>
+    <string name="new_login_form_hint">Criar nova tela de login</string>
+    <string name="status">Status</string>
+
+    <string name="todo">A Fazer</string>
+    <string name="doing">Fazendo</string>
+    <string name="done">Concluido</string>
+    <string name="save">Salvar</string>
 </resources>

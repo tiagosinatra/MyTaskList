@@ -8,8 +8,26 @@
     <string name="addAccount">Create Account</string>
     <string name="recoveryAccount">Recovery Account</string>
     <string name="submit">Submit</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="developedby">Developed By:</string>
     <string name="version">Version: 1.0</string>
+    <string name="loading_tasks">Loading Tasks</string>
+
+    <string name="account_not_registered_register_fragment">No accounts found with this email.</string>
+    <string name="invalid_email_register_fragment">Please enter a valid email.</string>
+    <string name="invalid_password_register_fragment">Invalid password, please try again.</string>
+    <string name="email_in_use_register_fragment">This email is already in use.</string>
+    <string name="strong_password_register_fragment">Enter a stronger password.</string>
+    <string name="error_generic">An error has occurred, please try again later.</string>
+
+
+    <string name="new_task">New Task</string>
+    <string name="task">Task</string>
+    <string name="new_login_form_hint">Create new login form</string>
+    <string name="status">Status</string>
+    <string name="todo">To do</string>
+    <string name="doing">Doing</string>
+    <string name="done">Done</string>
+    <string name="save">Save</string>
 
 </resources>
