@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import br.com.tiagosinatra.mytasklist.R
 import br.com.tiagosinatra.mytasklist.databinding.FragmentAboutUSBinding
 import br.com.tiagosinatra.mytasklist.databinding.FragmentFormTaskBinding
@@ -16,7 +17,7 @@ import br.com.tiagosinatra.mytasklist.model.Task
 
 
 class FormTaskFragment : Fragment() {
-
+    private val args: FormTaskFragmentArgs by navArgs()
     private var _binding: FragmentFormTaskBinding? = null
     private val binding get() = _binding!!
     private lateinit var task: Task
@@ -34,7 +35,7 @@ class FormTaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListener()
-
+        getArgs()
     }
 
     private fun initListener(){
@@ -97,5 +98,39 @@ class FormTaskFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun getArgs(){
+        args.task.let {
+            if (it != null) {
+                task = it
+                configTask()
+            }
+        }
+    }
+
+    private fun configTask(){
+        newTask = false
+        statusTask = task.status
+        binding.toolBar.text = "Editando Tarefa"
+        binding.editText.setText(task.description)
+        setStatus()
+
+    }
+
+    private fun setStatus() {
+        binding.radioGroup.check(
+            when (task.status) {
+                0 -> {
+                    R.id.rbTodo
+                }
+                1 -> {
+                    R.id.rbDoing
+                }
+                else -> {
+                    R.id.rbDone
+                }
+            }
+        )
     }
 }

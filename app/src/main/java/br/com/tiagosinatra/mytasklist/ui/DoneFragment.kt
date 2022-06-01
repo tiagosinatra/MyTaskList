@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.tiagosinatra.mytasklist.R
 import br.com.tiagosinatra.mytasklist.databinding.FragmentDoneBinding
@@ -92,7 +93,35 @@ class DoneFragment : Fragment() {
             TaskAdapter.SELECT_REMOVE -> {
                 deleteTask(task)
             }
+            TaskAdapter.SELECT_EDIT -> {
+                val action = HomeFragmentDirections
+                    .actionHomeFragmentToFormTaskFragment(task)
+                findNavController().navigate(action)
+            }TaskAdapter.SELECT_BACK -> {
+                task.status = 1
+                updateTask(task)
+            }
         }
+    }
+
+    private fun updateTask(task: Task) {
+        FirebaseHelper
+            .getDatabase()
+            .child("task")
+            .child(FirebaseHelper.getIdUser()?: "")
+            .child(task.id)
+            .setValue(task)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful){
+                    Toast.makeText(requireContext(), "Tarefa atualizada om sucesso", Toast.LENGTH_SHORT)
+                } else {
+                    binding.progressBar.isVisible = false
+                    Toast.makeText(requireContext(), "Erro ao salvar tarefa", Toast.LENGTH_SHORT)
+                }
+            }.addOnFailureListener {
+                binding.progressBar.isVisible = false
+                Toast.makeText(requireContext(), "Erro ao salvar tarefa", Toast.LENGTH_SHORT)
+            }
     }
 
     private fun deleteTask(task: Task){
